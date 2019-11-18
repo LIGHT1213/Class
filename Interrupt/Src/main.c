@@ -139,14 +139,6 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-//		if(ShiningFlag==1)
-//		{
-//			shining();
-//		}
-//		else if(Running==1)
-//		{
-//			runing();
-//		}
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

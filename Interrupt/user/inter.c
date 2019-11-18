@@ -4,7 +4,7 @@
 
 void shining(void)
 {
-	HAL_GPIO_WritePin(LED1_GPIO_Port,LED1_Pin,0);
+		HAL_GPIO_WritePin(LED1_GPIO_Port,LED1_Pin,0);
 		HAL_GPIO_WritePin(LED2_GPIO_Port,LED2_Pin,0);
 		HAL_GPIO_WritePin(LED3_GPIO_Port,LED3_Pin,0);
 		HAL_GPIO_WritePin(LED4_GPIO_Port,LED4_Pin,0);
@@ -14,7 +14,8 @@ void shining(void)
 		HAL_GPIO_TogglePin(LED2_GPIO_Port,LED2_Pin);
 		HAL_GPIO_TogglePin(LED3_GPIO_Port,LED3_Pin);
 		HAL_GPIO_TogglePin(LED4_GPIO_Port,LED4_Pin);
-		MyDelay(100);}
+		MyDelay(1000);
+		}
 
 }
 void runing(void)
@@ -23,19 +24,19 @@ void runing(void)
 	{
 		HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_8);
 		HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_9);
-		MyDelay(200);
+		MyDelay(2000);
 		HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_8);
 		HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_9);
-		MyDelay(200);
+		MyDelay(2000);
 		HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_9);
 		HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_10);
-		MyDelay(200);
+		MyDelay(2000);
 		HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_9);
 		HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_10);
-		MyDelay(200);
+		MyDelay(2000);
 		HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_10);
 		HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_7);
-		MyDelay(200);
+		MyDelay(2000);
 		HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_10);
 		HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_7);
 	}
@@ -47,9 +48,10 @@ void MyDelay(uint16_t ms)
 	TIM1->CNT=0;
 	while(temp<=ms)
 	{
-	if(TIM1->CNT==1000)
+	if(TIM1->CNT == 1000)
 	{
 		temp++;
+		TIM1->CNT=0;
 	}
 	}
 	HAL_TIM_Base_Stop(&htim1);
