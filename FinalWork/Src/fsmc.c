@@ -24,43 +24,51 @@
 
 /* USER CODE END 0 */
 
-SRAM_HandleTypeDef hsram4;
+SRAM_HandleTypeDef hsram1;
 
 /* FSMC initialization function */
 void MX_FSMC_Init(void)
 {
   FSMC_NORSRAM_TimingTypeDef Timing = {0};
+  FSMC_NORSRAM_TimingTypeDef ExtTiming = {0};
 
-  /** Perform the SRAM4 memory initialization sequence
+  /** Perform the SRAM1 memory initialization sequence
   */
-  hsram4.Instance = FSMC_NORSRAM_DEVICE;
-  hsram4.Extended = FSMC_NORSRAM_EXTENDED_DEVICE;
-  /* hsram4.Init */
-  hsram4.Init.NSBank = FSMC_NORSRAM_BANK1;
-  hsram4.Init.DataAddressMux = FSMC_DATA_ADDRESS_MUX_DISABLE;
-  hsram4.Init.MemoryType = FSMC_MEMORY_TYPE_SRAM;
-  hsram4.Init.MemoryDataWidth = FSMC_NORSRAM_MEM_BUS_WIDTH_16;
-  hsram4.Init.BurstAccessMode = FSMC_BURST_ACCESS_MODE_DISABLE;
-  hsram4.Init.WaitSignalPolarity = FSMC_WAIT_SIGNAL_POLARITY_LOW;
-  hsram4.Init.WrapMode = FSMC_WRAP_MODE_DISABLE;
-  hsram4.Init.WaitSignalActive = FSMC_WAIT_TIMING_BEFORE_WS;
-  hsram4.Init.WriteOperation = FSMC_WRITE_OPERATION_ENABLE;
-  hsram4.Init.WaitSignal = FSMC_WAIT_SIGNAL_DISABLE;
-  hsram4.Init.ExtendedMode = FSMC_EXTENDED_MODE_DISABLE;
-  hsram4.Init.AsynchronousWait = FSMC_ASYNCHRONOUS_WAIT_DISABLE;
-  hsram4.Init.WriteBurst = FSMC_WRITE_BURST_DISABLE;
-  hsram4.Init.PageSize = FSMC_PAGE_SIZE_NONE;
+  hsram1.Instance = FSMC_NORSRAM_DEVICE;
+  hsram1.Extended = FSMC_NORSRAM_EXTENDED_DEVICE;
+  /* hsram1.Init */
+  hsram1.Init.NSBank = FSMC_NORSRAM_BANK1;
+  hsram1.Init.DataAddressMux = FSMC_DATA_ADDRESS_MUX_DISABLE;
+  hsram1.Init.MemoryType = FSMC_MEMORY_TYPE_SRAM;
+  hsram1.Init.MemoryDataWidth = FSMC_NORSRAM_MEM_BUS_WIDTH_16;
+  hsram1.Init.BurstAccessMode = FSMC_BURST_ACCESS_MODE_DISABLE;
+  hsram1.Init.WaitSignalPolarity = FSMC_WAIT_SIGNAL_POLARITY_LOW;
+  hsram1.Init.WrapMode = FSMC_WRAP_MODE_DISABLE;
+  hsram1.Init.WaitSignalActive = FSMC_WAIT_TIMING_BEFORE_WS;
+  hsram1.Init.WriteOperation = FSMC_WRITE_OPERATION_ENABLE;
+  hsram1.Init.WaitSignal = FSMC_WAIT_SIGNAL_DISABLE;
+  hsram1.Init.ExtendedMode = FSMC_EXTENDED_MODE_ENABLE;
+  hsram1.Init.AsynchronousWait = FSMC_ASYNCHRONOUS_WAIT_DISABLE;
+  hsram1.Init.WriteBurst = FSMC_WRITE_BURST_DISABLE;
+  hsram1.Init.PageSize = FSMC_PAGE_SIZE_NONE;
   /* Timing */
-  Timing.AddressSetupTime = 9;
+  Timing.AddressSetupTime = 15;
   Timing.AddressHoldTime = 15;
-  Timing.DataSetupTime = 255;
+  Timing.DataSetupTime = 24;
   Timing.BusTurnAroundDuration = 0;
   Timing.CLKDivision = 16;
   Timing.DataLatency = 17;
   Timing.AccessMode = FSMC_ACCESS_MODE_A;
   /* ExtTiming */
+  ExtTiming.AddressSetupTime = 3;
+  ExtTiming.AddressHoldTime = 15;
+  ExtTiming.DataSetupTime = 2;
+  ExtTiming.BusTurnAroundDuration = 0;
+  ExtTiming.CLKDivision = 16;
+  ExtTiming.DataLatency = 17;
+  ExtTiming.AccessMode = FSMC_ACCESS_MODE_A;
 
-  if (HAL_SRAM_Init(&hsram4, &Timing, NULL) != HAL_OK)
+  if (HAL_SRAM_Init(&hsram1, &Timing, &ExtTiming) != HAL_OK)
   {
     Error_Handler( );
   }
@@ -95,7 +103,7 @@ static void HAL_FSMC_MspInit(void){
   PD8   ------> FSMC_D13
   PD9   ------> FSMC_D14
   PD10   ------> FSMC_D15
-  PD11   ------> FSMC_A16
+  PD13   ------> FSMC_A18
   PD14   ------> FSMC_D0
   PD15   ------> FSMC_D1
   PD0   ------> FSMC_D2
@@ -116,7 +124,7 @@ static void HAL_FSMC_MspInit(void){
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
 
   /* GPIO_InitStruct */
-  GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11 
+  GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_13 
                           |GPIO_PIN_14|GPIO_PIN_15|GPIO_PIN_0|GPIO_PIN_1 
                           |GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_7;
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -167,7 +175,7 @@ static void HAL_FSMC_MspDeInit(void){
   PD8   ------> FSMC_D13
   PD9   ------> FSMC_D14
   PD10   ------> FSMC_D15
-  PD11   ------> FSMC_A16
+  PD13   ------> FSMC_A18
   PD14   ------> FSMC_D0
   PD15   ------> FSMC_D1
   PD0   ------> FSMC_D2
@@ -181,7 +189,7 @@ static void HAL_FSMC_MspDeInit(void){
                           |GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14 
                           |GPIO_PIN_15);
 
-  HAL_GPIO_DeInit(GPIOD, GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11 
+  HAL_GPIO_DeInit(GPIOD, GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_13 
                           |GPIO_PIN_14|GPIO_PIN_15|GPIO_PIN_0|GPIO_PIN_1 
                           |GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_7);
 
