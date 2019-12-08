@@ -21,8 +21,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
-#include "dac.h"
-#include "sdio.h"
+#include "dma.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -30,7 +29,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "ILI93xx.h"
+#include "UserMain.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -95,42 +94,20 @@ int main(void)
   MX_GPIO_Init();
   MX_FSMC_Init();
   MX_ADC1_Init();
-  MX_DAC_Init();
-  MX_SDIO_SD_Init();
   MX_USART1_UART_Init();
-  MX_TIM1_Init();
+  MX_DMA_Init();
+  MX_TIM4_Init();
+  MX_TIM2_Init();
+  MX_ADC2_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,GPIO_PIN_RESET);
-	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_9,GPIO_PIN_RESET);
-	HAL_Delay(1000);
-	TFTLCD_Init();
-	HAL_TIM_Base_Start(&htim1);
-	HAL_TIM_PWM_Init(&htim1);
-	HAL_TIM_PWM_Start(&htim1,ADC_CHANNEL_1);
-	HAL_TIM_PWM_Start(&htim1,ADC_CHANNEL_2);
-	
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-		for(int i=1;i<=99;i++)
-		{
-			__HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_1,i);
-			__HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_2,i);
-			if(i==99)
-			{
-				i=1;
-			}
-		}
-	POINT_COLOR=RED; 
-			LCD_ShowString(30,20,200,16,16,"STM32F4");	
-		//HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_4);
-		//HAL_Delay(5);
-		
-//	LCD_ShowString(30,70,200,16,16,"SCREEN TEST");	
-//	LCD_ShowString(30,90,200,16,16,"Light Pan");
+		UserMain();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

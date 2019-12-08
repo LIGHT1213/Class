@@ -3,6 +3,8 @@
 #include "sys.h"
 #include "stdlib.h"
 #include "fsmc.h"
+#include "arm_math.h"
+#include "stdio.h"
 #include "stm32f4xx_hal.h"
 //////////////////////////////////////////////////////////////////////////////////	 
  
@@ -58,7 +60,8 @@ typedef struct
 #define D2U_R2L  7 //从下到上,从右到左	 
 
 #define DFT_SCAN_DIR	L2R_U2D		//默认的扫描方向
-
+#define X_MAX_PIXEL 240
+#define Y_MAX_PIXEL 320
 //画笔颜色
 #define WHITE         	 0xFFFF
 #define BLACK         	 0x0000	  
@@ -113,7 +116,10 @@ void LCD_WriteRAM(u16 RGB_Code);
 void LCD_Scan_Dir(u8 dir);							//设置屏扫描方向
 void LCD_Display_Dir(u8 dir);						//设置屏幕显示方向
 void LCD_Set_Window(u16 sx,u16 sy,u16 width,u16 height);//设置窗口	
-
+void LCD_OUTPUT_Float(uint16_t LineX, uint16_t LineY, char *string,float32_t string_to_display);
+void Gui_DrawFont_GBK16(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *s);
+void Gui_DrawLine(uint16_t x0, uint16_t y0,uint16_t x1, uint16_t y1,uint16_t Color);
+void Lcd_Clear(uint16_t Color);
 //9320/9325 LCD寄存器  
 #define R0             0x00
 #define R1             0x01

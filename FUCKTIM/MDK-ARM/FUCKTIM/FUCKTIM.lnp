@@ -1,0 +1,28 @@
+--cpu=Cortex-M4.fp.sp
+"fucktim\startup_stm32f407xx.o"
+"fucktim\main.o"
+"fucktim\gpio.o"
+"fucktim\sys.o"
+"fucktim\tim.o"
+"fucktim\stm32f4xx_it.o"
+"fucktim\stm32f4xx_hal_msp.o"
+"fucktim\stm32f4xx_hal_tim.o"
+"fucktim\stm32f4xx_hal_tim_ex.o"
+"fucktim\stm32f4xx_hal_rcc.o"
+"fucktim\stm32f4xx_hal_rcc_ex.o"
+"fucktim\stm32f4xx_hal_flash.o"
+"fucktim\stm32f4xx_hal_flash_ex.o"
+"fucktim\stm32f4xx_hal_flash_ramfunc.o"
+"fucktim\stm32f4xx_hal_gpio.o"
+"fucktim\stm32f4xx_hal_dma_ex.o"
+"fucktim\stm32f4xx_hal_dma.o"
+"fucktim\stm32f4xx_hal_pwr.o"
+"fucktim\stm32f4xx_hal_pwr_ex.o"
+"fucktim\stm32f4xx_hal_cortex.o"
+"fucktim\stm32f4xx_hal.o"
+"fucktim\stm32f4xx_hal_exti.o"
+"fucktim\system_stm32f4xx.o"
+--library_type=microlib --strict --scatter "FUCKTIM\FUCKTIM.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "FUCKTIM.map" -o FUCKTIM\FUCKTIM.axf

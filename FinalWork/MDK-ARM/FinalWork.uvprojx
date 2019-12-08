@@ -337,9 +337,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define>USE_HAL_DRIVER,STM32F407xx</Define>
+              <Define>USE_HAL_DRIVER,STM32F407xx,ARM_MATH_CM4,__FPU_PRESENT=1U,__FPU_USED =1U</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;     ../Drivers/STM32F4xx_HAL_Driver/Inc;     ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;     ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;     ../Drivers/CMSIS/Include;     ..\MyFile;     ..\MyFile\TOUCH</IncludePath>
+              <IncludePath>../Inc;            ../Drivers/STM32F4xx_HAL_Driver/Inc;            ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;            ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;            ..\MyFile;            ..\MyFile\TOUCH;            ..\DSP\Include;           ../Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -409,19 +409,14 @@
               <FilePath>../Src/adc.c</FilePath>
             </File>
             <File>
-              <FileName>dac.c</FileName>
+              <FileName>dma.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Src/dac.c</FilePath>
+              <FilePath>../Src/dma.c</FilePath>
             </File>
             <File>
               <FileName>fsmc.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/fsmc.c</FilePath>
-            </File>
-            <File>
-              <FileName>sdio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/sdio.c</FilePath>
             </File>
             <File>
               <FileName>sys.c</FileName>
@@ -529,16 +524,6 @@
               <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c</FilePath>
             </File>
             <File>
-              <FileName>stm32f4xx_hal_dac.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_hal_dac_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32f4xx_ll_fsmc.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fsmc.c</FilePath>
@@ -547,16 +532,6 @@
               <FileName>stm32f4xx_hal_sram.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_ll_sdmmc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f4xx_hal_sd.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.c</FilePath>
             </File>
             <File>
               <FileName>stm32f4xx_hal_tim.c</FileName>
@@ -598,6 +573,36 @@
               <FileType>1</FileType>
               <FilePath>..\MyFile\UserMain.c</FilePath>
             </File>
+            <File>
+              <FileName>AutomaticDimming.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MyFile\AutomaticDimming.c</FilePath>
+            </File>
+            <File>
+              <FileName>UserADC.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MyFile\UserADC.c</FilePath>
+            </File>
+            <File>
+              <FileName>gui.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MyFile\gui.c</FilePath>
+            </File>
+            <File>
+              <FileName>UserFFT.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MyFile\UserFFT.c</FilePath>
+            </File>
+            <File>
+              <FileName>KeyPad.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MyFile\KeyPad.c</FilePath>
+            </File>
+            <File>
+              <FileName>My_uart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MyFile\My_uart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -611,6 +616,12 @@
     <apis/>
     <components>
       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.3.0" condition="ARMv6_7_8-M Device">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.6.0"/>
+        <targetInfos>
+          <targetInfo name="FinalWork"/>
+        </targetInfos>
+      </component>
+      <component Cclass="CMSIS" Cgroup="DSP" Cvariant="Library" Cvendor="ARM" Cversion="1.7.0" condition="CMSIS DSP">
         <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.6.0"/>
         <targetInfos>
           <targetInfo name="FinalWork"/>

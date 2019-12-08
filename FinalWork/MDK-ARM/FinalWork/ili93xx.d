@@ -25,8 +25,6 @@ finalwork/ili93xx.o: ..\MyFile\ILI93xx.c ..\MyFile\ILI93xx.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_adc.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_adc_ex.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dac.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dac_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h \
@@ -34,10 +32,13 @@ finalwork/ili93xx.o: ..\MyFile\ILI93xx.c ..\MyFile\ILI93xx.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_fsmc.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_sd.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_sdmmc.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h ..\Inc\fsmc.h \
-  ..\Inc\main.h ..\MyFile\FONT.h
+  ..\Inc\main.h ..\DSP\Include\arm_math.h \
+  ..\Drivers\CMSIS\Include\cmsis_compiler.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\float.h \
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\MyFile\FONT.h
