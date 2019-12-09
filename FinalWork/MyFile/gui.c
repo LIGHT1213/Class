@@ -1,6 +1,6 @@
 #include "gui.h"
 uint16_t Adc_table[2048];
-float FFT_table[2048];
+float32_t FFT_table[2048];
 int LastX_Wave=0,LastY_Wave=120;
 int LastX_FFT=20,LastY_FFT=200;
 void LCD_OUTPUT_Wave(void)

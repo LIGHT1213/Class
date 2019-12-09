@@ -21,7 +21,10 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "adc.h"
+#include "dac.h"
 #include "dma.h"
+#include "fatfs.h"
+#include "sdio.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -100,6 +103,9 @@ int main(void)
   MX_TIM2_Init();
   MX_ADC2_Init();
   MX_TIM3_Init();
+  MX_SDIO_SD_Init();
+  MX_FATFS_Init();
+  MX_DAC_Init();
   /* USER CODE BEGIN 2 */
   /* USER CODE END 2 */
 

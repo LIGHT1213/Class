@@ -1011,8 +1011,9 @@ void LCD_ShowString(u16 x,u16 y,u16 width,u16 height,u8 size,u8 *p)
 void LCD_OUTPUT_Float(uint16_t LineX, uint16_t LineY, char *string,float32_t string_to_display)
 {
   uint8_t tmp[64];
-  sprintf((char*)tmp, "%s:%f",string, string_to_display);
-	Gui_DrawFont_GBK16(LineX, LineY, BLACK, WHITE, tmp);
+  sprintf((char*)tmp, "%s:%.3f",string, string_to_display);
+	//Gui_DrawFont_GBK16(LineX, LineY, BLACK, WHITE, tmp);
+	LCD_ShowString(LineX,LineY,100,240,16,tmp);
 }
 void Gui_DrawFont_GBK16(uint16_t x, uint16_t y, uint16_t fc, uint16_t bc, uint8_t *s)
 {

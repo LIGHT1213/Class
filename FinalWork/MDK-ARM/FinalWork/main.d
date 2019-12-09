@@ -25,6 +25,8 @@ finalwork/main.o: ..\Src\main.c ..\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_adc.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_adc_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dac.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dac_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h \
@@ -32,14 +34,22 @@ finalwork/main.o: ..\Src\main.c ..\Inc\main.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_fsmc.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_sd.h \
+  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_ll_sdmmc.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h ..\Inc\adc.h \
-  ..\Inc\main.h ..\Inc\dma.h ..\Inc\tim.h ..\Inc\usart.h ..\Inc\gpio.h \
-  ..\Inc\fsmc.h ..\MyFile\UserMain.h ..\MyFile\AutomaticDimming.h \
-  ..\MyFile\ILI93xx.h ..\MyFile\sys.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
-  ..\DSP\Include\arm_math.h ..\Drivers\CMSIS\Include\cmsis_compiler.h \
+  ..\Inc\main.h ..\Inc\dac.h ..\Inc\dma.h ..\Inc\fatfs.h \
+  ..\Middlewares\Third_Party\FatFs\src\ff.h \
+  ..\Middlewares\Third_Party\FatFs\src\integer.h ..\Inc\ffconf.h \
+  ..\Inc\bsp_driver_sd.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  ..\Middlewares\Third_Party\FatFs\src\ff_gen_drv.h \
+  ..\Middlewares\Third_Party\FatFs\src\diskio.h \
+  ..\Middlewares\Third_Party\FatFs\src\ff.h ..\Inc\sd_diskio.h \
+  ..\Inc\sdio.h ..\Inc\tim.h ..\Inc\usart.h ..\Inc\gpio.h ..\Inc\fsmc.h \
+  ..\MyFile\UserMain.h ..\MyFile\AutomaticDimming.h ..\MyFile\ILI93xx.h \
+  ..\MyFile\sys.h ..\DSP\Include\arm_math.h \
+  ..\Drivers\CMSIS\Include\cmsis_compiler.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\float.h \

@@ -5,7 +5,7 @@
 
 uint16_t Key_scan(void)
 {
-	uint16_t Key_val = 16;          
+	uint16_t Key_val = 0;          
 	                                
 	uint16_t temp;
     
@@ -139,70 +139,70 @@ uint16_t Key_scan(void)
 	return Key_val;
 }
 
-void KeyShow_LCD(void)
-{
-	if(Key_scan() == 1)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_0");
-	}
-	else if(Key_scan() == 2)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_1");
-	}
-		else if(Key_scan() == 3)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_2");
-	}
-		else if(Key_scan() == 4)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_3");
-	}
-		else if(Key_scan() == 5)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_4");
-	}
-		else if(Key_scan() == 6)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_5");
-	}
-		else if(Key_scan() == 7)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_6");
-	}
-		else if(Key_scan() == 8)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_7");
-	}
-		else if(Key_scan() == 9)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_8");
-	}
-		else if(Key_scan() == 10)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_9");
-	}
-		else if(Key_scan() == 11)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_A");
-	}
-		else if(Key_scan() == 12)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_B");
-	}
-		else if(Key_scan() == 13)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_C");
-	}
-		else if(Key_scan() == 14)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_D");
-	}
-		else if(Key_scan() == 15)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_E");
-	}
-		else if(Key_scan() == 16)
-	{
-		LCD_ShowString(15,100,200,16,16,"key_F");
-	}
-}
+//void KeyShow_LCD(void)
+//{
+//	if(Key_scan() == 1)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_0");
+//	}
+//	else if(Key_scan() == 2)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_1");
+//	}
+//		else if(Key_scan() == 3)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_2");
+//	}
+//		else if(Key_scan() == 4)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_3");
+//	}
+//		else if(Key_scan() == 5)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_4");
+//	}
+//		else if(Key_scan() == 6)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_5");
+//	}
+//		else if(Key_scan() == 7)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_6");
+//	}
+//		else if(Key_scan() == 8)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_7");
+//	}
+//		else if(Key_scan() == 9)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_8");
+//	}
+//		else if(Key_scan() == 10)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_9");
+//	}
+//		else if(Key_scan() == 11)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_A");
+//	}
+//		else if(Key_scan() == 12)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_B");
+//	}
+//		else if(Key_scan() == 13)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_C");
+//	}
+//		else if(Key_scan() == 14)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_D");
+//	}
+//		else if(Key_scan() == 15)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_E");
+//	}
+//		else if(Key_scan() == 16)
+//	{
+//		LCD_ShowString(15,100,200,16,16,"key_F");
+//	}
+//}

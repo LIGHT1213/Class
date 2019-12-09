@@ -1,40 +1,32 @@
-/*
-* ???FFT???? ???????????
-*/
-
 #include "UserFFT.h"
 #define LEN 1024
 float Array_Fre[2048];
 extern Pair* generate_data();
-/*
-* ?????ADC????? 2048Hz????2048?? ????rFFT ??????????
-*/
 void User_FastRfft2048BlokingMode(float32_t* MagOutPosition)
 {
-	//ADC?????????
-	uint16_t adc_input[2048] = {0};
-	//2048????????
-	float32_t realval[2048] = {0};
-	float32_t fftoutput[2048] = {0};
-	//??FFT????
+	//ADC采样结果存放在这里
+	uint16_t adc_input[2048] = {1};
+	//2048个实部的输入数组
+	float32_t realval[2048] = {1};
+	float32_t fftoutput[2048] = {1};
+	//快速FFT表结构体
 	arm_rfft_fast_instance_f32 S;
 	
-	//2048???2048Hz rFFT????????
+	//2048输入点2048Hz rFFT查表结构体初始化
 	arm_rfft_2048_fast_init_f32(&S);
 	
 	User_AdcStartBlokingMode(adc_input,2048);
 	
-	//?ADC???????DMA???????FFT???
+	//将ADC采集到的数据从DMA缓冲区取到准备FFT的位置
 	for(uint16_t input = 0;input < 2048;input ++)
 	{
 		realval[input] = (3.3 * (float)adc_input[input]) / (float)4095;
 	}
 	
-	//FFT???? ??? 0 ????fft
+	//FFT运算函数 最后的 0 代表是正fft
 	arm_rfft_fast_f32(&S,realval,fftoutput,0);
-	//???
+	//求模长
 	arm_cmplx_mag_f32(fftoutput,MagOutPosition,1024);
-	
 	
 }
 
@@ -51,9 +43,6 @@ void OUTPUT_Fre(void)
 	int tempi3=0;
 	float Array_Fre[2048];
 	User_FastRfft2048BlokingMode(Array_Fre);
-//	Pair* m_data = generate_data();
-//	sort(m_data);
-//print_data(m_data);
 	for(uint16_t i =1;i<1024;i++)
 	{
 	if(Array_Fre[i]>=temp)
@@ -61,7 +50,6 @@ void OUTPUT_Fre(void)
 		temp=Array_Fre[i];
 		tempi=i;
 	}
-	//printf("%f\r\n",Array_Fre[i]);
 	
 	}
 		for(uint16_t i =1;i<1024;i++)
@@ -90,6 +78,8 @@ void OUTPUT_Fre(void)
 		LCD_OUTPUT_Float(140,20,"FRE:",tempi2);
 					LCD_OUTPUT_Float(0,40,"AMP:",temp3*2);
 		LCD_OUTPUT_Float(140,40,"FRE:",tempi3);
+	printf("AMP:%.3f\r\n",temp*2.2);
+	printf("FRE:%d\r\n",tempi);
 //	for(uint16_t i=0;i<=1023;i++)
 //	{
 //	}
