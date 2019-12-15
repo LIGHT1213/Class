@@ -54,5 +54,5 @@ finalwork/main.o: ..\Src\main.c ..\Inc\main.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\float.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\MyFile\UserFFT.h \
-  ..\MyFile\UserADC.h ..\MyFile\gui.h ..\MyFile\KeyPad.h \
-  ..\MyFile\My_uart.h
+  ..\MyFile\UserADC.h ..\MyFile\gui.h ..\MyFile\SDCard.h \
+  ..\MyFile\KeyPad.h ..\MyFile\My_uart.h

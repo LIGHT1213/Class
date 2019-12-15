@@ -87,14 +87,14 @@ u16 LCD_ReadPoint(u16 x,u16 y)
  	u16 r=0,g=0,b=0;
 	if(x>=lcddev.width||y>=lcddev.height)return 0;	//超过了范围,直接返回		   
 	LCD_SetCursor(x,y);	    
-	if(lcddev.id==0X9341||lcddev.id==0X6804||lcddev.id==0X5310)LCD_WR_REG(0X2E);//9341/6804/3510 发送读GRAM指令
+	if(lcddev.id==0x9341||lcddev.id==0X6804||lcddev.id==0X5310)LCD_WR_REG(0X2E);//9341/6804/3510 发送读GRAM指令
 	else if(lcddev.id==0X5510)LCD_WR_REG(0X2E00);	//5510 发送读GRAM指令
 	else LCD_WR_REG(R34);      		 				//其他IC发送读GRAM指令
  	if(lcddev.id==0X9320)opt_delay(2);				//FOR 9320,延时2us	    
 	if(TFTLCD->LCD_RAM)r=0;							//dummy Read	   
 	opt_delay(2);	  
  	r=TFTLCD->LCD_RAM;  		  						//实际坐标颜色
- 	if(lcddev.id==0X9341||lcddev.id==0X5310||lcddev.id==0X5510)		//9341/NT35310/NT35510要分2次读出
+ 	if(lcddev.id==0x9341||lcddev.id==0X5310||lcddev.id==0X5510)		//9341/NT35310/NT35510要分2次读出
  	{
 		opt_delay(2);	  
 		b=TFTLCD->LCD_RAM; 
@@ -102,14 +102,14 @@ u16 LCD_ReadPoint(u16 x,u16 y)
 		g<<=8;
 	} 
 	if(lcddev.id==0X9325||lcddev.id==0X4535||lcddev.id==0X4531||lcddev.id==0XB505||lcddev.id==0XC505)return r;	//这几种IC直接返回颜色值
-	else if(lcddev.id==0X9341||lcddev.id==0X5310||lcddev.id==0X5510)return (((r>>11)<<11)|((g>>10)<<5)|(b>>11));//ILI9341/NT35310/NT35510需要公式转换一下
+	else if(lcddev.id==0x9341||lcddev.id==0X5310||lcddev.id==0X5510)return (((r>>11)<<11)|((g>>10)<<5)|(b>>11));//ILI9341/NT35310/NT35510需要公式转换一下
 	else return LCD_BGR2RGB(r);						//其他IC
 }			 
 
 //LCD开启显示
 void LCD_DisplayOn(void)
 {					   
-	if(lcddev.id==0X9341||lcddev.id==0X6804||lcddev.id==0X5310)LCD_WR_REG(0X29);	//开启显示
+	if(lcddev.id==0x9341||lcddev.id==0X6804||lcddev.id==0X5310)LCD_WR_REG(0X29);	//开启显示
 	else if(lcddev.id==0X5510)LCD_WR_REG(0X2900);	//开启显示
 	else LCD_WriteReg(R7,0x0173); 				 	//开启显示
 }	
@@ -117,7 +117,7 @@ void LCD_DisplayOn(void)
 //LCD关闭显示
 void LCD_DisplayOff(void)
 {	   
-	if(lcddev.id==0X9341||lcddev.id==0X6804||lcddev.id==0X5310)LCD_WR_REG(0X28);	//关闭显示
+	if(lcddev.id==0x9341||lcddev.id==0X6804||lcddev.id==0X5310)LCD_WR_REG(0X28);	//关闭显示
 	else if(lcddev.id==0X5510)LCD_WR_REG(0X2800);	//关闭显示
 	else LCD_WriteReg(R7,0x0);//关闭显示 
 } 
@@ -127,7 +127,7 @@ void LCD_DisplayOff(void)
 //Ypos:纵坐标
 void LCD_SetCursor(u16 Xpos, u16 Ypos)
 {	 
- 	if(lcddev.id==0X9341||lcddev.id==0X5310)
+ 	if(lcddev.id==0x9341||lcddev.id==0X5310)
 	{		    
 		LCD_WR_REG(lcddev.setxcmd); 
 		LCD_WR_DATA(Xpos>>8); 
@@ -305,7 +305,7 @@ void LCD_DrawPoint(u16 x,u16 y)
 //color:颜色
 void LCD_Fast_DrawPoint(u16 x,u16 y,u16 color)
 {	   
-	if(lcddev.id==0X9341||lcddev.id==0X5310)
+	if(lcddev.id==0x9341||lcddev.id==0X5310)
 	{
 		LCD_WR_REG(lcddev.setxcmd); 
 		LCD_WR_DATA(x>>8); 
@@ -347,7 +347,7 @@ void LCD_Display_Dir(u8 dir)
 		lcddev.dir=0;	//竖屏
 		lcddev.width=240;
 		lcddev.height=320;
-		if(lcddev.id==0X9341||lcddev.id==0X6804||lcddev.id==0X5310)
+		if(lcddev.id==0x9341||lcddev.id==0X6804||lcddev.id==0X5310)
 		{
 			lcddev.wramcmd=0X2C;
 	 		lcddev.setxcmd=0X2A;
@@ -375,7 +375,7 @@ void LCD_Display_Dir(u8 dir)
 			lcddev.dir=1;	//横屏
 		lcddev.width=320;
 		lcddev.height=240;
-		if(lcddev.id==0X9341||lcddev.id==0X5310)
+		if(lcddev.id==0x9341||lcddev.id==0X5310)
 		{
 			lcddev.wramcmd=0X2C;
 	 		lcddev.setxcmd=0X2A;
@@ -418,7 +418,7 @@ void LCD_Set_Window(u16 sx,u16 sy,u16 width,u16 height)
 	u16 hsaval,heaval,vsaval,veaval; 
 	width=sx+width-1;
 	height=sy+height-1;
-	if(lcddev.id==0X9341||lcddev.id==0X5310||lcddev.id==0X6804)//6804横屏不支持
+	if(lcddev.id==0x9341||lcddev.id==0X5310||lcddev.id==0X6804)//6804横屏不支持
 	{
 		LCD_WR_REG(lcddev.setxcmd); 
 		LCD_WR_DATA(sx>>8); 
@@ -632,7 +632,7 @@ void TFTLCD_Init(void)
  		}  	
 	}  
 	
-//	if(lcddev.id==0X9341||lcddev.id==0X5310||lcddev.id==0X5510)//如果是这三个IC,则设置WR时序为最快
+//	if(lcddev.id==0x9341||lcddev.id==0X5310||lcddev.id==0X5510)//如果是这三个IC,则设置WR时序为最快
 //	{
 //		//重新配置写时序控制寄存器的时序  
 //		Timing.FSMC_AddressSetupTime = 0x03;  //地址建立时间（ADDSET）为3个HCLK =18ns  	 
@@ -912,8 +912,8 @@ void LCD_ShowChar(u16 x,u16 y,u8 num,u8 size,u8 mode)
 		else return;								//没有的字库
 		for(t1=0;t1<8;t1++)
 		{			    
-			if(temp&0x80)LCD_Fast_DrawPoint(x,y,POINT_COLOR);
-			else if(mode==0)LCD_Fast_DrawPoint(x,y,BACK_COLOR);
+			if(temp&0x80)LCD_DrawPoint(x,y);
+			//else if(mode==0)LCD_Fast_DrawPoint(x,y,BACK_COLOR);
 			temp<<=1;
 			y++;
 			if(x>=lcddev.width)return;		//超区域了
@@ -1137,23 +1137,22 @@ int32_t dx,         // difference in x's
 			LCD_DrawPoint(x0,y0);
 			
 			// test if error has overflowed
-			if (error >= 0) //脢脟路帽脨猫脪陋脭枚录脫y脳酶卤锚脰碌
+			if (error >= 0)
 			{
 				error-=dx2;
 
 				// move to next line
-				y0+=y_inc;//脭枚录脫y脳酶卤锚脰碌
+				y0+=y_inc;
 			} // end if error overflowed
 
 			// adjust the error term
 			error+=dy2;
 
 			// move to the next pixel
-			x0+=x_inc;//x脳酶卤锚脰碌脙驴麓脦禄颅碌茫潞贸露录碌脻脭枚1
-		} // end for
-	} // end if |slope| <= 1
-	//y脰谩麓贸脫脷x脰谩拢卢脭貌脙驴赂枚y脰谩脡脧脰禄脫脨脪禄赂枚碌茫拢卢x脰谩脠么赂脡赂枚碌茫
-	//脪脭y脰谩脦陋碌脻脭枚禄颅碌茫
+			x0+=x_inc;
+		} 
+	} 
+
 	else
 	{
 		// initialize error term

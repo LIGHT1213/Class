@@ -47,4 +47,10 @@ finalwork/userfft.o: ..\MyFile\UserFFT.c ..\MyFile\UserFFT.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\float.h ..\MyFile\gui.h \
   ..\MyFile\ILI93xx.h ..\MyFile\sys.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h ..\Inc\fsmc.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\MyFile\SDCard.h \
+  ..\Inc\sdio.h ..\Inc\fatfs.h ..\Middlewares\Third_Party\FatFs\src\ff.h \
+  ..\Middlewares\Third_Party\FatFs\src\integer.h ..\Inc\ffconf.h \
+  ..\Inc\bsp_driver_sd.h \
+  ..\Middlewares\Third_Party\FatFs\src\ff_gen_drv.h \
+  ..\Middlewares\Third_Party\FatFs\src\diskio.h \
+  ..\Middlewares\Third_Party\FatFs\src\ff.h ..\Inc\sd_diskio.h

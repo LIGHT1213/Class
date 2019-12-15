@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=C:/Users/pan39/Desktop/Class/FinalWork/Inc
+HeaderPath=C:/Users/pan39/Desktop/Singlechip/stm32/Class/FinalWork/Inc
 HeaderFiles=gpio.h;fsmc.h;sys.h;stm32f4xx_it.h;stm32f4xx_hal_conf.h;main.h;adc.h;dac.h;sdio.h;usart.h;tim.h;dma.h;ffconf.h;bsp_driver_sd.h;sd_diskio.h;fatfs.h;
-SourcePath=C:/Users/pan39/Desktop/Class/FinalWork/Src
+SourcePath=C:/Users/pan39/Desktop/Singlechip/stm32/Class/FinalWork/Src
 SourceFiles=gpio.c;fsmc.c;sys.c;stm32f4xx_it.c;stm32f4xx_hal_msp.c;main.c;adc.c;dac.c;sdio.c;usart.c;tim.c;dma.c;bsp_driver_sd.c;sd_diskio.c;fatfs.c;
 
 [PreviousLibFiles]

@@ -45,4 +45,11 @@ finalwork/gui.o: ..\MyFile\gui.c ..\MyFile\gui.h ..\MyFile\UserADC.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
   C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\float.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\MyFile\UserFFT.h
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\MyFile\UserFFT.h \
+  ..\MyFile\SDCard.h ..\Inc\sdio.h ..\Inc\fatfs.h \
+  ..\Middlewares\Third_Party\FatFs\src\ff.h \
+  ..\Middlewares\Third_Party\FatFs\src\integer.h ..\Inc\ffconf.h \
+  ..\Inc\bsp_driver_sd.h \
+  ..\Middlewares\Third_Party\FatFs\src\ff_gen_drv.h \
+  ..\Middlewares\Third_Party\FatFs\src\diskio.h \
+  ..\Middlewares\Third_Party\FatFs\src\ff.h ..\Inc\sd_diskio.h

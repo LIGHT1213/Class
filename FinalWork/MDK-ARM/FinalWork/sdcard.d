@@ -1,6 +1,5 @@
-finalwork/usermain.o: ..\MyFile\UserMain.c ..\MyFile\UserMain.h \
-  ..\Inc\adc.h ..\Inc\main.h \
-  ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
+finalwork/sdcard.o: ..\MyFile\SDCard.c ..\MyFile\SDCard.h ..\Inc\sdio.h \
+  ..\Inc\main.h ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
   ..\Inc\stm32f4xx_hal_conf.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h \
@@ -40,19 +39,10 @@ finalwork/usermain.o: ..\MyFile\UserMain.c ..\MyFile\UserMain.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h \
   ..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_uart.h \
-  ..\MyFile\AutomaticDimming.h ..\Inc\tim.h ..\MyFile\ILI93xx.h \
-  ..\MyFile\sys.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
-  ..\Inc\fsmc.h ..\DSP\Include\arm_math.h \
-  ..\Drivers\CMSIS\Include\cmsis_compiler.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\float.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\MyFile\UserFFT.h \
-  ..\MyFile\UserADC.h ..\Inc\main.h ..\MyFile\gui.h ..\MyFile\SDCard.h \
-  ..\Inc\sdio.h ..\Inc\fatfs.h ..\Middlewares\Third_Party\FatFs\src\ff.h \
+  ..\Inc\fatfs.h ..\Middlewares\Third_Party\FatFs\src\ff.h \
   ..\Middlewares\Third_Party\FatFs\src\integer.h ..\Inc\ffconf.h \
-  ..\Inc\bsp_driver_sd.h \
+  ..\Inc\bsp_driver_sd.h C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   ..\Middlewares\Third_Party\FatFs\src\ff_gen_drv.h \
   ..\Middlewares\Third_Party\FatFs\src\diskio.h \
   ..\Middlewares\Third_Party\FatFs\src\ff.h ..\Inc\sd_diskio.h \
-  ..\MyFile\KeyPad.h ..\MyFile\My_uart.h ..\Inc\usart.h
+  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h

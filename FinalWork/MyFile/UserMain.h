@@ -11,5 +11,7 @@
 #include "KeyPad.h"
 #include "stdio.h"
 #include "My_uart.h"
+#include "SDCard.h"
 void UserMain(void);
+void KeyChoose(void);
 #endif
