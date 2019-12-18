@@ -8,6 +8,7 @@
 #define GETR_FROM_RGB16(RGB565)  ((unsigned char)(( ((unsigned short int )RGB565) >>11)<<3))		  			//返回8位 R
 #define GETG_FROM_RGB16(RGB565)  ((unsigned char)(( ((unsigned short int )(RGB565 & 0x7ff)) >>5)<<2)) 	//返回8位 G
 #define GETB_FROM_RGB16(RGB565)  ((unsigned char)(( ((unsigned short int )(RGB565 & 0x1f))<<3)))       	//返回8位 B
+	
 #define Bank1_LCD_C    ((u32)0x6C000000)	   //Disp Reg ADDR
 #define Bank1_LCD_D    ((u32)0x6D000000)       //Disp Data ADDR       // A23 PE2
 #define LCD_ILI9341_CMD(index)       LCD_WR_REG(index)

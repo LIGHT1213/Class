@@ -1,6 +1,7 @@
 #include "UserMain.h"
 extern uint16_t Adc_table[2048];
 uint8_t command;
+uint8_t UserMessage[]={"Welcome to digital oscilloscope"};
 void UserMain()
 {
 	uint16_t temp;
@@ -12,6 +13,7 @@ void UserMain()
 	HAL_TIM_Base_Start_IT(&htim2);
 	User_AdcInit();
 	Lcd_Clear(WHITE);
+	LCD_ShowString(40,104,320,16,16,UserMessage);
 	CheckSDCard();
 
 	while(1)
@@ -21,9 +23,10 @@ void UserMain()
 //		{
 //			LCD_DrawPoint(i,j);
 //		}
+		printf("123");
 		//LCD_DrawPoint(1,1);
 		//SaveToSDcard();
-		KeyChoose();
+		//KeyChoose();
 //		OUTPUT_Fre();
 //		LCD_OUTPUT_Wave();
 //		HAL_Delay(1000);
@@ -37,9 +40,9 @@ void KeyChoose(void)
 	{
 		OUTPUT_Fre();
 		LCD_OUTPUT_Wave();
-		HAL_Delay(1000);
+		HAL_Delay(500);
 		LCD_OUTPUT_FFT();
-		//command='1';
+		command='1';
 	}
 	else if(command=='2')
 	{

@@ -5,7 +5,9 @@
 #else
 #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
 #endif 
+extern uint8_t Command;
 extern uint8_t command;
+int FlagNum=0;
 int fputc(int ch,FILE *f)
 {
     uint8_t temp[1]={ch};
@@ -22,6 +24,7 @@ PUTCHAR_PROTOTYPE
 
 void HAL_UART_RxCpltCallback (UART_HandleTypeDef * huart) 
 {
+	uint8_t command;
 	if(huart->Instance == USART1)
 	{
 		HAL_UART_Receive_IT(&huart1,&command,1);

@@ -97,20 +97,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-		//HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_6);
-		LightUpLED(timer);
-		m=HAL_GPIO_ReadPin(GPIOA,GPIO_PIN_5);
-		if(m==GPIO_PIN_RESET)
-			{
-				HAL_GPIO_TogglePin(GPIOF,GPIO_PIN_6);
-				HAL_Delay(100);
-		timer++;
-		if(timer>4)
-		{
-			timer=0;
-		}
-		HAL_Delay(100);
-		}
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
