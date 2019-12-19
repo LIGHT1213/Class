@@ -72,6 +72,7 @@ void OUTPUT_Fre(void)
 	//printf("%f\r\n",Array_Fre[i]);
 	
 	}
+	
 			LCD_OUTPUT_Float(0,0,"AMP:",temp*2.2);
 		LCD_OUTPUT_Float(140,0,"FRE:",tempi);
 				LCD_OUTPUT_Float(0,20,"AMP:",temp2*2);

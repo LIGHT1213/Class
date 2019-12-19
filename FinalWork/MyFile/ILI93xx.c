@@ -590,7 +590,7 @@ void TFTLCD_Init(void)
  	LCD_WriteReg(0x0000,0x0001);
 	HAL_Delay(50); // delay 50 ms 
   	lcddev.id = LCD_ReadReg(0x0000); 
-		lcddev.id =0x9341;
+		//lcddev.id =0x9341;
   	if(lcddev.id<0xFF||lcddev.id==0xFFFF||lcddev.id==0x9300)//读到ID不正确,新增lcddev.id==0x9300判断，因为9341在未被复位的情况下会被读成9300
 	{	
  		//尝试9341 ID的读取		
