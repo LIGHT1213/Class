@@ -53,7 +53,6 @@
 "finalwork\ff.o"
 "finalwork\ff_gen_drv.o"
 "finalwork\syscall.o"
-"finalwork\ccsbcs.o"
 "..\..\..\..\..\..\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\DSP\Lib\ARM\arm_cortexM4lf_math.lib"
 --library_type=microlib --strict --scatter "FinalWork\FinalWork.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols

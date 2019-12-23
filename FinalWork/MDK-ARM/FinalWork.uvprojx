@@ -328,7 +328,7 @@
             <uC99>1</uC99>
             <uGnu>0</uGnu>
             <useXO>0</useXO>
-            <v6Lang>3</v6Lang>
+            <v6Lang>4</v6Lang>
             <v6LangP>3</v6LangP>
             <vShortEn>1</vShortEn>
             <vShortWch>1</vShortWch>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx,ARM_MATH_CM4,__FPU_PRESENT=1U,__FPU_USED =1U</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;                        ../Drivers/STM32F4xx_HAL_Driver/Inc;                        ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                        ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                        ..\MyFile;                        ..\MyFile\TOUCH;                        ..\DSP\Include;                       ../Drivers/CMSIS/Include;          ../Middlewares/Third_Party/FatFs/src</IncludePath>
+              <IncludePath>../Inc;                            ../Drivers/STM32F4xx_HAL_Driver/Inc;                            ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;                            ../Drivers/CMSIS/Device/ST/STM32F4xx/Include;                            ..\MyFile;                            ..\MyFile\TOUCH;                            ..\DSP\Include;                           ../Drivers/CMSIS/Include;              ../Middlewares/Third_Party/FatFs/src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -677,11 +677,6 @@
               <FileName>syscall.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Middlewares/Third_Party/FatFs/src/option/syscall.c</FilePath>
-            </File>
-            <File>
-              <FileName>ccsbcs.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Middlewares/Third_Party/FatFs/src/option/ccsbcs.c</FilePath>
             </File>
           </Files>
         </Group>
