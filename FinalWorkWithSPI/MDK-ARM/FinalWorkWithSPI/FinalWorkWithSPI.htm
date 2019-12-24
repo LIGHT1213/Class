@@ -3,9 +3,9 @@
 <title>Static Call Graph - [FinalWorkWithSPI\FinalWorkWithSPI.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image FinalWorkWithSPI\FinalWorkWithSPI.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6130100: Last Updated: Tue Dec 24 00:16:42 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6130100: Last Updated: Tue Dec 24 08:24:29 2019
 <BR><P>
-<H3>Maximum Stack Usage =      29224 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =      29216 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 main &rArr; User_main &rArr; KeyChoose &rArr; OUTPUT_Fre &rArr; User_FastRfft2048BlokingMode &rArr; arm_rfft_fast_f32 &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32
 <P>
@@ -1171,8 +1171,8 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(RESET)
 </UL>
-<P><STRONG><a name="[dd]"></a>KeyChoose</STRONG> (Thumb, 242 bytes, Stack size 24 bytes, user_main.o(.text.KeyChoose))
-<BR><BR>[Stack]<UL><LI>Max Depth = 29224<LI>Call Chain = KeyChoose &rArr; OUTPUT_Fre &rArr; User_FastRfft2048BlokingMode &rArr; arm_rfft_fast_f32 &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32
+<P><STRONG><a name="[dd]"></a>KeyChoose</STRONG> (Thumb, 242 bytes, Stack size 16 bytes, user_main.o(.text.KeyChoose))
+<BR><BR>[Stack]<UL><LI>Max Depth = 29216<LI>Call Chain = KeyChoose &rArr; OUTPUT_Fre &rArr; User_FastRfft2048BlokingMode &rArr; arm_rfft_fast_f32 &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32
 </UL>
 <BR>[Calls]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Lcd_Clear
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_OUTPUT_Wave
@@ -1709,7 +1709,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[10d]"></a>User_main</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, user_main.o(.text.User_main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 29224<LI>Call Chain = User_main &rArr; KeyChoose &rArr; OUTPUT_Fre &rArr; User_FastRfft2048BlokingMode &rArr; arm_rfft_fast_f32 &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32
+<BR><BR>[Stack]<UL><LI>Max Depth = 29216<LI>Call Chain = User_main &rArr; KeyChoose &rArr; OUTPUT_Fre &rArr; User_FastRfft2048BlokingMode &rArr; arm_rfft_fast_f32 &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32
 </UL>
 <BR>[Calls]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Systeminit
@@ -1959,7 +1959,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[5b]"></a>main</STRONG> (Thumb, 58 bytes, Stack size 0 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 29224<LI>Call Chain = main &rArr; User_main &rArr; KeyChoose &rArr; OUTPUT_Fre &rArr; User_FastRfft2048BlokingMode &rArr; arm_rfft_fast_f32 &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32
+<BR><BR>[Stack]<UL><LI>Max Depth = 29216<LI>Call Chain = main &rArr; User_main &rArr; KeyChoose &rArr; OUTPUT_Fre &rArr; User_FastRfft2048BlokingMode &rArr; arm_rfft_fast_f32 &rArr; arm_cfft_f32 &rArr; arm_cfft_radix8by4_f32 &rArr; arm_radix8_butterfly_f32
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;User_main
 <LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config

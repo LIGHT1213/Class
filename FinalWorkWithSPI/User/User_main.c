@@ -72,7 +72,7 @@ void KeyChoose(void)
 		//HAL_Delay(500);
 		//OUTPUT_Fre();
 		LCD_OUTPUT_FFT();
-		command='1';
+		//command='1';
 	}
 	else if(command=='2')
 	{
